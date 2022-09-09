@@ -1,0 +1,65 @@
+function buyFruits(){
+  setTimeout(() => {
+    console.log("Buy Pinapple,Oranges and Apple from the Marketplace");
+  }, 5000);
+}
+
+function cutandpeelFruits(){
+  setTimeout(() => {
+    console.log("Cut and Pinapple,Oranges and Apple and peel ");
+  }, 1000);
+}
+
+function addFruitsinJuicer(){
+  setTimeout(() => {
+    console.log("Adding peeled peice of Fruits in Juicer");
+  }, 1000);
+
+}
+
+
+function executetheprocess(){
+  buyFruits();
+  cutandpeelFruits();
+  addFruitsinJuicer();
+}
+
+
+executetheprocess();
+
+
+function buyFruits(){
+  return new Promise((resolve,reject)=>{
+    setTimeout(() => {
+      resolve(console.log("Buy Pinapple,Oranges and Apple from the Marketplace"))
+  },3000);
+  });
+  }
+
+
+  function cutandpeelFruits(){
+    return new Promise((resolve,reject)=>{
+      setTimeout(() => {
+        resolve(console.log("Cut and Pinapple,Oranges and Apple and peel"))
+    },1000);
+  })
+  }
+
+  function addFruitsinJuicer(){
+    return new Promise((resolve,reject)=>{
+      setTimeout(() => {
+        resolve(console.log("Adding peeled peice of Fruits in Juicer"))
+    },1000);
+  })
+    
+}
+
+
+async function executetheprocess(){
+   await buyFruits();
+   await  cutandpeelFruits();
+   await   addFruitsinJuicer();
+  }
+  
+
+  executetheprocess();
